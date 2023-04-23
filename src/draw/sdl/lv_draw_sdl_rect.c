@@ -649,6 +649,8 @@ static void draw_shadow(lv_draw_sdl_ctx_t * ctx, const lv_area_t * coords, const
                                             lv_area_get_width(&mask_area_blurred));
         lv_mem_buf_release(mask_buf);
         lv_draw_mask_remove_id(mask_id);
+        printf("renderer addr: %p\n", (void *)ctx->renderer);
+        printf("LAST_SDL_ERR: %s\n", SDL_GetError());
         SDL_assert(texture);
         lv_draw_sdl_texture_cache_put(ctx, &key, sizeof(key), texture);
     }

@@ -6,6 +6,8 @@ endif()
 
 set(LVGL_ROOT_DIR ${CMAKE_CURRENT_LIST_DIR})
 
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -s USE_SDL=2 -g")
+
 if(ESP_PLATFORM)
   include(${CMAKE_CURRENT_LIST_DIR}/env_support/cmake/esp.cmake)
 elseif(ZEPHYR_BASE)
